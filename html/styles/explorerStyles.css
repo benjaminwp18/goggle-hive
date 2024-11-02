@@ -1,0 +1,175 @@
+/* FILE PANELS */
+
+#fileContainer {
+	padding: 1vh 0.5vw 1vh 0.5vw;
+	height: fit-content;
+	width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.filePanel {
+	text-align: center;
+	background-color: transparent;
+	border: 2px solid transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: inline;
+	float: left;
+	width: 11vw;
+	min-width: 9em;
+	height: 10em;
+	padding: 1%;
+	margin: 0;
+	transition: 0.2s;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.filePanel img, .filePanel p {
+	display: block;
+	width: fit-content;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.filePanel p {
+	overflow: auto;
+	height: 60%;
+	width: 100%;
+	font-size: 1em;
+}
+
+.filePanel img {
+	height: 40%;
+	width: auto;
+}
+
+.filePanel:hover {
+	background-color: var(--custom-gray);
+	border: 2px solid var(--custom-blue);
+	color: var(--custom-blue);
+}
+
+.filePanel.selected {
+	background-color: #DEE;
+}
+
+.filePanel.selected:hover {
+	border: 2px solid var(--custom-blue);
+}
+
+.filePanel.selected.latest {
+	color: var(--custom-blue);
+}
+
+@media only screen and (max-width: 768px) {
+	#fileContainer { text-align: center; }
+}
+
+
+/* EXPLORER NAV */
+
+#fileExplorerNav {
+	background-color: #EEE;
+	padding: 1em;
+}
+
+/* All nav elements have font-size: inherit; */
+#fileExplorerNav { font-size: 1.2em; }
+
+#fileExplorerNav p {
+	margin: 1vw;
+	font-size: inherit;
+}
+
+#fileExplorerNav button, #searchBar button {
+	background-color: var(--custom-blue);
+	color: var(--custom-gray);
+	border: 0;
+	padding: 0.5em;
+	margin: 0.2em 0 0.2em 0;
+	font-size: inherit;
+}
+
+#fileExplorerNav button:hover, #searchBar button:hover, #fileExplorerNav .inUse {
+	background-color: var(--custom-dark-blue);
+}
+
+#fileExplorerNav button:disabled, #searchBar button:disabled {
+	background-color: #AAAAAA;
+	cursor: default;
+}
+
+#fileExplorerNav #backArrowButton {
+	background-color: transparent;
+	color: var(--custom-blue);
+}
+
+#fileExplorerNav #backArrowButton:hover {
+	color: var(--custom-dark-blue);
+}
+
+
+/* EXPLORER SEARCH BAR (button styling in EXPLORER NAV section above) */
+#searchBar {
+	background-color: #EEE;
+	padding: 0 1em 1em 1em;
+	display: none;
+}
+
+#searchInput {
+	padding: 0.5em;
+	margin: 0.2em 0 0.2em 0;
+	font-size: inherit;
+}
+
+
+/* Copying styling for main a, as file_viewer.php doesn't have a main (doesn't use flex) */
+
+#fileExplorerNav a {
+	font-family: "Oxygen-Regular", sans-serif;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: inherit;
+	transition: 0.2s;
+}
+
+#fileExplorerNav a:visited {
+	color: blue;
+}
+
+#fileExplorerNav a:link {
+	color: blue;
+}
+
+#fileExplorerNav a:hover {
+	text-decoration: underline;
+}
+
+@media only screen and (max-width: 1200px) {
+	#explorerNavFolderLink, #explorerNavFolderArrow { display: none !important; }
+}
+
+@media only screen and (max-width: 1110px) {
+	#explorerNavProjectLink, #explorerNavProjectArrow { display: none !important; }
+}
+
+@media only screen and (max-width: 990px) {
+	#explorerNavClassLink, #explorerNavSlashes { display: none !important; }
+}
+
+@media only screen and (max-width: 850px) {
+	#explorerNavMyClasses { display: none !important; }
+	#fileExplorerNav .spacer { display: none; }
+	#backArrowButton {
+		background-color: var(--custom-blue) !important;
+		color: var(--custom-gray) !important;
+	}
+}
